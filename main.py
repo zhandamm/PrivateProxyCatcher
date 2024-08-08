@@ -71,8 +71,8 @@ def main():
                 get_another_button.click()
 
                 try:
-                    # Ожидание изменения текста кнопки или таймаут через 6 секунд
-                    WebDriverWait(driver, 6).until(EC.text_to_be_present_in_element((By.CSS_SELECTOR, "button.btn.btn-primary"), "Get another"))
+                    # Ожидание изменения текста кнопки или таймаут через 5 секунд
+                    WebDriverWait(driver, 5).until(EC.text_to_be_present_in_element((By.CSS_SELECTOR, "button.btn.btn-primary"), "Get another"))
 
                     if "text-danger" in ip_element.get_attribute("class"):
                         continue
@@ -87,7 +87,7 @@ def main():
                         count += 1
 
                 except Exception as e:
-                    print("Данные не поступили в течение 6 секунд, перезагрузка страницы...")
+                    print("Данные не поступили в течение 5 секунд, перезагрузка страницы...")
                     break  # Прерываем внутренний цикл для обновления страницы
 
     except Exception as e:
